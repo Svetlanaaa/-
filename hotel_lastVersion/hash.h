@@ -3,10 +3,10 @@
 
 const int MAX = 180;
 typedef struct{
-	int index;   /* ëîãè÷åñêèé èíäåêñ */
-	Guest* g;     /* ñîáñòâåííî çíà÷åíèå ýëåìåíòà äàííûõ */
-	hashType *next; /* óêàçàòåëü íà ñëåäóþùèé ýëåìåíò ñ òàêèì æå
-						õýø-àäðåñîì */
+	int index;   /* Ã«Ã®Ã£Ã¨Ã·Ã¥Ã±ÃªÃ¨Ã© Ã¨Ã­Ã¤Ã¥ÃªÃ± */
+	Guest* g;     /* Ã±Ã®Ã¡Ã±Ã²Ã¢Ã¥Ã­Ã­Ã® Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¥ Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã  Ã¤Ã Ã­Ã­Ã»Ãµ */
+	hashType *next; /* Ã³ÃªÃ Ã§Ã Ã²Ã¥Ã«Ã¼ Ã­Ã  Ã±Ã«Ã¥Ã¤Ã³Ã¾Ã¹Ã¨Ã© Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã² Ã± Ã²Ã ÃªÃ¨Ã¬ Ã¦Ã¥
+						ÃµÃ½Ã¸-Ã Ã¤Ã°Ã¥Ã±Ã®Ã¬ */
 } hashType;
 
 class Hash {
@@ -23,8 +23,8 @@ public:
 	int hashF(Guest *g)
 	{
 		int res;
-		res = (g->getPassport() % 6) / MAX;
-		res = res + (g->getPassport() / 6) / MAX;
+		res = (g->getPassport() % pow(10,6)) / MAX;
+		res = res + (g->getPassport() / pow(10, 6)) / MAX;
 		return res;
 	}
 
